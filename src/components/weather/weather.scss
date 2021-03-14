@@ -14,6 +14,9 @@
 
 .location {
     font-size: 60px;
+    @media (max-width: 425px) {
+        font-size: 30px;
+    }
 }
 
 .temperature {
