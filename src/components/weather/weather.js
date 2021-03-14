@@ -69,11 +69,13 @@ export default function Weather() {
         backgroundSize: "cover",
       }}
     >
-      <h1 className="location">{city}</h1>
-      <p className="temperature">
-        {temperature} {"\u00B0"}c
-      </p>
-      <p className="weather">{weather}</p>
+      <div className="text-container">
+        <h1 className="location">{city}</h1>
+        <p className="temperature">
+          {temperature} {"\u00B0"}c
+        </p>
+        <p className="weather">{weather}</p>
+      </div>
     </div>
   );
 }
