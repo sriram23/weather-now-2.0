@@ -49,7 +49,7 @@ export default function Weather() {
   async function getWeatherData(coords) {
     return new Promise(async (resolve, reject) => {
       const res = fetch(
-        `http://api.openweathermap.org/data/2.5/weather?lat=${coords[0]}&lon=${coords[1]}&units=metric&appid=${key}`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${coords[0]}&lon=${coords[1]}&units=metric&appid=${key}`
       );
       res.then((data) =>
           data.json().then((data) => {
