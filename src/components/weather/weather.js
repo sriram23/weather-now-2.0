@@ -35,9 +35,9 @@ export default function Weather() {
     Clouds: Cloudy,
   };
   const [dummyDependent] = useState("");
-  const [city, setCity] = useState("Coimbatore");
-  const [temperature, setTemp] = useState(0);
-  const [weather, setWeather] = useState("Sunny");
+  const [city, setCity] = useState("Please allow location access to use this app");
+  const [temperature, setTemp] = useState();
+  const [weather, setWeather] = useState("");
   useEffect(() => fetchLocation(), [dummyDependent]);
   const fetchLocation = async function () {
     await navigator.geolocation.getCurrentPosition((position) => {
@@ -58,21 +58,26 @@ export default function Weather() {
             setWeather(data.weather[0].main);
             resolve();
           })
-        )
+        ).catch((err) => {
+          setCity('Please Enable Location and Internet')
+          setTemp('');
+          setWeather('');
+          console.error('Something went wrong: ',err);
+        })
     });
   }
   return (
     <div
       className="weather-container"
       style={{
-        backgroundImage: `url(${image[weather]})`,
+        backgroundImage: `url(${image[weather] || image['Haze']})`,
         backgroundSize: "cover",
       }}
     >
       <div className="text-container">
         <h1 className="location">{city}</h1>
         <p className="temperature">
-          {temperature} {"\u00B0"}c
+          {temperature} {temperature?"\u00B0 c":''}
         </p>
         <p className="weather">{weather}</p>
       </div>
