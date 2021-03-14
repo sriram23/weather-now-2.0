@@ -31,11 +31,10 @@ export default function Weather() {
     Ash,
     Squall: Mist,
     Tornado,
-    Clear,
+    Clear: Sunny,
     Clouds: Cloudy,
   };
   const [dummyDependent] = useState("");
-  //   const [location, setLocation] = useState([0, 0]);
   const [city, setCity] = useState("Coimbatore");
   const [temperature, setTemp] = useState(0);
   const [weather, setWeather] = useState("Sunny");
@@ -43,10 +42,7 @@ export default function Weather() {
   const fetchLocation = async function () {
     await navigator.geolocation.getCurrentPosition((position) => {
       const coord = [position.coords.latitude, position.coords.longitude];
-      //   setLocation(coord);
-      console.log("Coords: ", coord);
-      const loc = getWeatherData(coord);
-      console.log("Loc: ", loc);
+      getWeatherData(coord);
       return;
     });
   };
@@ -56,15 +52,13 @@ export default function Weather() {
         `http://api.openweathermap.org/data/2.5/weather?lat=${coords[0]}&lon=${coords[1]}&units=metric&appid=${key}`
       );
       res.then((data) =>
-        console.log(
-          "Res: ",
           data.json().then((data) => {
             setCity(data.name);
             setTemp(data.main.temp);
             setWeather(data.weather[0].main);
+            resolve();
           })
         )
-      );
     });
   }
   return (
