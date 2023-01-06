@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios"
+import WeatherCard from "../weatherCard/weatherCard";
+import Location from "../location/location";
+import Temperature from "../temperature/temperature";
+import Wind from "../wind/wind";
+import Clouds from "../cloud/cloud";
+import Sun from "../sun/sun";
 
 
 const Weather = () => {
@@ -40,7 +46,17 @@ const Weather = () => {
     <div>
       {locationError && <p>Unable to fetch Location</p>}
       {weatherDataError && <p>Something went wrong while fetching weather data</p>}
-      {weatherData && !weatherDataError && <p>{JSON.stringify(weatherData)}</p>}
+      {weatherData && !weatherDataError && 
+      <div>
+        <p>{JSON.stringify(weatherData)}</p>
+        <Location city={weatherData.name} country={weatherData.sys && weatherData.sys.country} date={weatherData.dt}/>
+        <WeatherCard weather={weatherData.weather}/>
+        <Temperature/>
+        <Wind/>
+        <Clouds/>
+        <Sun/>
+      </div>
+      }
     </div>
   )
 }
