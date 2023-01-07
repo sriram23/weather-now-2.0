@@ -1,7 +1,8 @@
 const Wind = ({wind}) => {
-    return (
+    return (wind &&
         <div>
-            {JSON.stringify(wind)}
+            Speed: {wind.speed}
+            Degree: {wind.deg}
         </div>
     )
 }

@@ -1,7 +1,7 @@
 const Clouds = ({clouds}) => {
-    return (
+    return ( clouds &&
         <div>
-            {JSON.stringify(clouds)}
+            Cloud: {clouds.all}
         </div>
     )
 }
