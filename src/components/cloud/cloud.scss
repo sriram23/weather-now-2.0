@@ -1,0 +1,13 @@
+@import "../../common.scss";
+.clouds-section {
+    @extend .common-section;
+    .clouds-image {
+        @extend .common-image;
+        img {
+            width: 100%;
+        }
+    }
+    .cloud-value {
+        @extend .common-value;
+    }
+}

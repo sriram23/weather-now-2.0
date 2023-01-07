@@ -1,0 +1,16 @@
+@import "../../common.scss";
+.temp-section {
+    @extend .common-section;
+    .temp-subsection {
+        @extend .common-subsection;
+        .temp-image {
+            @extend .common-image;
+            img{
+                width: 100%;
+            }
+        }
+        .temp-value {
+            @extend .common-value;
+        }
+    }
+}

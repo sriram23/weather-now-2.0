@@ -1,12 +1,17 @@
 import React from "react"
 import moment from "moment"
+import "./location.scss"
 const Location = ({city, country, date}) => {
     const FLAG = `https://countryflagsapi.com/png/${country}`
     console.log(FLAG)
     return (
-        <div>
-            {city && city} | {country && <img src={FLAG} alt="Flag"/>} | Last Updated: {date && moment.unix(date).fromNow()}
-        </div>
+        <section className="location-section">
+            <div className="location-subsection">
+                <h1>{city && city}</h1>
+                <figure className="flag">{country && <img src={FLAG} alt="Flag"/>}</figure>
+            </div>
+            <span>Last Updated: {date && moment.unix(date).fromNow()}</span>  
+        </section>
     )
 }
 

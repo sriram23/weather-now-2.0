@@ -1,0 +1,16 @@
+@import "../../common.scss";
+.sun-section {
+    @extend .common-section;
+    .sun-subsection {
+        @extend .common-subsection;
+        .sun-image {
+            @extend .common-image;
+            img{
+                width: 100%;
+            }
+        }
+        .sun-value {
+            @extend .common-value;
+        }
+    }
+}

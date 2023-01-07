@@ -1,0 +1,15 @@
+.location-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .location-subsection {
+        display: flex;
+        align-items: center;
+        .flag {
+            width: 2rem;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

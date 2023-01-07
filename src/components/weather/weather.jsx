@@ -35,7 +35,6 @@ const Weather = () => {
 
   const fetchWeatherData = () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
-    console.log("URL: ", url)
     axios.get(url).then(data => {
       setWeatherData(data.data)
       setWeatherDataError(false)
@@ -50,7 +49,6 @@ const Weather = () => {
       {weatherDataError && <p>Something went wrong while fetching weather data</p>}
       {weatherData && !weatherDataError && 
       <div>
-        <p>{JSON.stringify(weatherData)}</p>
         <Location city={weatherData.name} country={weatherData.sys && weatherData.sys.country} date={weatherData.dt}/>
         <WeatherCard weather={weatherData && weatherData.weather}/>
         <Temperature temp={weatherData && weatherData.main}/>
