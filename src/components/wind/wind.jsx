@@ -51,7 +51,7 @@ const Wind = ({wind}) => {
                     <img src={WIND} alt="wind" />
                 </figure>
                 <caption>Wind Speed</caption> &nbsp;
-                <p className="wind-value">{wind.speed}</p>
+                <p className="wind-value">{wind.speed} m/s</p>
             </div>
             <div className="wind-subsection">
                 <figure className="wind-image">

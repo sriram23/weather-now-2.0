@@ -33,7 +33,7 @@ const Temperature = ({temp}) => {
                     <img src={PRESSURE} alt="pressure" />
                 </figure>
                 <caption>Pressure</caption> &nbsp;
-                <p className="temp-value">{temp.pressure} mb</p>
+                <p className="temp-value">{temp.pressure} hPa</p>
             </div>
             <div className="temp-subsection">
                 <figure className="temp-image">
