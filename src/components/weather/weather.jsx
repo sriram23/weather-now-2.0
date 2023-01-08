@@ -47,7 +47,7 @@ const Weather = () => {
     <div>
       {locationError && <p>Unable to fetch Location</p>}
       {weatherDataError && <p>Something went wrong while fetching weather data</p>}
-      {weatherData && !weatherDataError && 
+      {weatherData && !weatherDataError && !locationError &&
       <div>
         <Location city={weatherData.name} country={weatherData.sys && weatherData.sys.country} date={weatherData.dt}/>
         <WeatherCard weather={weatherData && weatherData.weather}/>

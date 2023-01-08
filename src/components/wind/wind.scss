@@ -12,5 +12,11 @@
         .wind-value {
             @extend .common-value;
         }
+        .arrow {
+            width: 2rem;
+            img {
+                width: 100%;
+            }
+        }
     }
 }
