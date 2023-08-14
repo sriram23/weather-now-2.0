@@ -2,7 +2,7 @@ import React from "react"
 import moment from "moment"
 import "./location.scss"
 const Location = ({city, country, date}) => {
-    const FLAG = `https://countryflagsapi.com/png/${country}`
+    const FLAG = `https://flagsapi.com/${country}/shiny/65.png`
     console.log(FLAG)
     return (
         <section className="location-section">
