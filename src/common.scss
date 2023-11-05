@@ -1,39 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 * {
-    font-family: "Montserrat", sans-serif;
-  }
-.common-section {
-    display: flex;
-    border: 0.5px solid #00000044;
-    border-radius: 0.5rem;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    align-items: center;
-    flex-wrap: wrap;
-    .common-subsection {
-        display: flex;
-        align-items: center;
-    }
-    .common-image {
-        width: 3rem;
-        img {
-            width: 100%;
-        }
-    }
-    .common-value {
-        font-weight: bold;
-        font-size: 1rem;
-        // margin: 0 0.5rem;
-    }
+  font-family: "Montserrat", sans-serif;
 }
 
-body{
+$bgs: (
+  b1: linear-gradient(90deg, #e4ad7a, #d770b2),
+  b2: linear-gradient(90deg, #f97d98, #d41f46),
+  b3: linear-gradient(90deg, #fffaa7, #fbac08),
+  b4: linear-gradient(90deg, #a5e29c, #1b7b2c),
+  b5: linear-gradient(90deg, #7debf2, #60a4ff),
+  b6: linear-gradient(90deg, #b587e6, #d169d1),
+  b7: linear-gradient(90deg, #cb6594, #f81d55),
+);
+@each $key, $color in $bgs {
+  ##{$key}-bg {
+    background: $color;
+  }
+}
+.common-section {
+  display: flex;
+  border: 0.5px solid #00000044;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  .common-subsection {
     display: flex;
-    justify-content: center;
+    align-items: center;
+  }
+  .common-image {
+    width: 3rem;
+    img {
+      width: 100%;
+    }
+  }
+  .common-value {
+    font-weight: bold;
+    font-size: 1rem;
+  }
 }
 
 .main-container {
-    border: 0.5px solid #00000044;
-    padding: 1rem;
-    max-width: 50rem;
+  width: 100%;
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-main-container {
+  border: 0.5px solid #00000044;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 50rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

@@ -25,12 +25,18 @@ const Weather = () => {
 
   const fetchLocation =  () => {
     console.log("Fetching location...")
+    try{
     navigator.geolocation.getCurrentPosition((position) => {
       setLocationError(false);
       setLat(position.coords.latitude);
       setLon(position.coords.longitude);
       return;
     });
+  }
+  catch(err) {
+    console.error("Error fetching location: ", err)
+    setLocationError(true)
+  }
   };
 
   const fetchWeatherData = () => {

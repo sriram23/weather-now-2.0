@@ -16,7 +16,6 @@ const Location = ({ city, country, date }) => {
     });
     console.log("b64: " + b64);
   }, [country]);
-  //   console.log(B64);
   return (
     <section className="location-section">
       <span>Last Updated: {date && moment.unix(date).fromNow()}</span>
