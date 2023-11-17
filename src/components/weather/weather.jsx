@@ -51,7 +51,8 @@ const Weather = () => {
   }
   return (
     <div>
-      {locationError && <p>Unable to fetch Location</p>}
+      {locationError && <p>We can't fetch your location! 
+        Enable location permission for this page or use a different browser (like Chrome or Firefox!).</p>}
       {weatherDataError && <p>Something went wrong while fetching weather data</p>}
       {weatherData && !weatherDataError && !locationError &&
       <div>

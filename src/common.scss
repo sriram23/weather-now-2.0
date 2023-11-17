@@ -42,10 +42,16 @@ $bgs: (
   }
 }
 
+body {
+  padding: unset;
+  margin: unset;
+}
+
 .main-container {
   width: 100%;
-  min-height: 95vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

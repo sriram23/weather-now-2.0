@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Weather from "./components/weather/weather.jsx";
+import Search from "./components/search/search.jsx";
 
 function App() {
   const [bg, setBg] = useState(Math.floor(Math.random() * 7) + 1);
   return (
     <div className="main-container" id={"b" + bg + "-bg"}>
+      <Search/>
       <div className="weather-main-container">
         <Weather />
         <div>
