@@ -4,11 +4,12 @@ import Search from "./components/search/search.jsx";
 
 function App() {
   const [bg, setBg] = useState(Math.floor(Math.random() * 7) + 1);
+  const [city, setCity] = useState("");
   return (
     <div className="main-container" id={"b" + bg + "-bg"}>
-      <Search/>
+      <Search onValueChange={(value) => setCity(value)}/>
       <div className="weather-main-container">
-        <Weather />
+        <Weather city={city} />
         <div>
           <button
             onClick={() => {
